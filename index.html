@@ -1,7 +1,7 @@
 <!--
  * @Author: PlanC
  * @Date: 2021-01-12 12:33:16
- * @LastEditTime: 2021-01-30 11:30:23
+ * @LastEditTime: 2021-01-30 11:34:26
  * @FilePath: \iplanc.github.io\index.html
 -->
 
@@ -112,31 +112,6 @@
                 document.getElementById('s').innerHTML = s;
             }
 
-            window.onload = function() {
-                //alert(document.getElementById("busuanzi_value_site_pv").innerText);
-                //var img = document.createElement('img');
-                //switch (document.getElementById("busuanzi_value_site_pv").innerText) {
-                //    case 10000:
-                //        img.src = 'https://img.shields.io/badge/Visitors-10000-brightgreen';
-                //        document.getElementById('achivements').appendChild(img);
-                //    case 5000:
-                //        img.src = 'https://img.shields.io/badge/Visitors-5000-brightgreen';
-                //        document.getElementById('achivements').appendChild(img);
-                //    case 2000:
-                //        img.src = 'https://img.shields.io/badge/Visitors-2000-brightgreen';
-                //        document.getElementById('achivements').appendChild(img);
-                //    case 1000:
-                //        img.src = 'https://img.shields.io/badge/Visitors-1000-brightgreen';
-                //        document.getElementById('achivements').appendChild(img);
-                //    case 500:
-                //        img.src = 'https://img.shields.io/badge/Visitors-500-brightgreen';
-                //        document.getElementById('achivements').appendChild(img);
-                //    case 100:
-                //        img.src = 'https://img.shields.io/badge/Visitors-100-brightgreen';
-                //        document.getElementById('achivements').appendChild(img);
-                //}
-            }
-
             timer();
             setInterval(timer, 100);
         </script>
@@ -145,29 +120,27 @@
             <svg class="line-chart"></svg>
             <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1/dist/chart.xkcd.min.js"></script>
             <script>
-                window.onload = function() {
-                    const svg = document.querySelector('.line-chart');
-                    var date = new Date();
-                    var request = new XMLHttpRequest();
-                    var data = [0, 0, 0, 0, 0, 0, 0, 0, 0, document.getElementById("busuanzi_value_site_pv").innerText]
-                    var config = {
-                        title: 'PlanC 💕 Unii',
-                        xLabel: '📅 Date',
-                        yLabel: '👀 Viewers',
-                        data: {
-                            labels: [date.getDate() - 9, date.getDate() - 8, date.getDate() - 7, date.getDate() - 6, date.getDate() - 5, date.getDate() - 4, date.getDate() - 3, date.getDate() - 2, date.getDate() - 1, date.toLocaleDateString()],
-                            datasets: [{
-                                label: 'view',
-                                data: data,
-                            }],
-                        },
-                        options: {
-                            yTickCount: 10,
-                            legendPosition: chartXkcd.config.positionType.upLeft,
-                            backgroundColor: "#00000000",
-                        }
-                    };
-                }
+                const svg = document.querySelector('.line-chart');
+                var date = new Date();
+                var request = new XMLHttpRequest();
+                var data = [0, 0, 0, 0, 0, 0, 0, 0, 0, document.getElementById("busuanzi_value_site_pv").innerHTML]
+                var config = {
+                    title: 'PlanC 💕 Unii',
+                    xLabel: '📅 Date',
+                    yLabel: '👀 Viewers',
+                    data: {
+                        labels: [date.getDate() - 9, date.getDate() - 8, date.getDate() - 7, date.getDate() - 6, date.getDate() - 5, date.getDate() - 4, date.getDate() - 3, date.getDate() - 2, date.getDate() - 1, date.toLocaleDateString()],
+                        datasets: [{
+                            label: 'view',
+                            data: data,
+                        }],
+                    },
+                    options: {
+                        yTickCount: 10,
+                        legendPosition: chartXkcd.config.positionType.upLeft,
+                        backgroundColor: "#00000000",
+                    }
+                };
 
                 const lineChart = new chartXkcd.Line(svg, config);
             </script>
