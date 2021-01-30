@@ -1,7 +1,7 @@
 <!--
  * @Author: PlanC
  * @Date: 2021-01-12 12:33:16
- * @LastEditTime: 2021-01-20 10:58:32
+ * @LastEditTime: 2021-01-30 10:50:28
  * @FilePath: \iplanc.github.io\index.html
 -->
 
@@ -50,10 +50,15 @@
 
             .content {
                 position: absolute;
-                width: 100%;
                 top: 40%;
+                width: 100%;
+                height: auto;
                 transform: translate(0, -50%);
                 text-align: center;
+            }
+
+            .chart {
+                height: 100%;
             }
 
             .timer {
@@ -119,6 +124,34 @@
             timer();
             setInterval(timer, 100);
         </script>
-        <div></div>
+
+        <div class="chart">
+            <svg class="line-chart"></svg>
+            <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1/dist/chart.xkcd.min.js"></script>
+            <script>
+                const svg = document.querySelector('.line-chart');
+                var date = new Date();
+                var data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                var config = {
+                    title: 'PlanC 💕 Unii',
+                    xLabel: '📅 Date',
+                    yLabel: '👀 Viewers',
+                    data: {
+                        labels: [date.getDate() - 9, date.getDate() - 8, date.getDate() - 7, date.getDate() - 6, date.getDate() - 5, date.getDate() - 4, date.getDate() - 3, date.getDate() - 2, date.getDate() - 1, date.toLocaleDateString()],
+                        datasets: [{
+                            label: 'view',
+                            data: data,
+                        }],
+                    },
+                    options: {
+                        yTickCount: 10,
+                        legendPosition: chartXkcd.config.positionType.upLeft,
+                        backgroundColor: "#00000000",
+                    }
+                };
+
+                const lineChart = new chartXkcd.Line(svg, config);
+            </script>
+        </div>
     </body>
 </html>
