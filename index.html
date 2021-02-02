@@ -1,7 +1,7 @@
 <!--
  * @Author: PlanC
  * @Date: 2021-01-12 12:33:16
- * @LastEditTime: 2021-02-01 20:15:56
+ * @LastEditTime: 2021-02-02 14:57:18
  * @FilePath: \iplanc.github.io\index.html
 -->
 
@@ -81,8 +81,8 @@
             <h2><a id="lover"></a>，我们已经在一起了</h2>
             <div class="timer"><b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds</div>
             <span id="busuanzi_container_site_pv">已被 <span id="busuanzi_value_site_pv"></span> 人见证。</span><br/>
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=500 height=86 src="https://music.163.com/outchain/player?type=2&id=1345872140&auto=0&height=66"></iframe>
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=500 height=86 src="https://music.163.com/outchain/player?type=2&id=1309853414&auto=0&height=66"></iframe>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=500 height=86 src="https://music.163.com/outchain/player?type=2&id=1345872140&height=66"></iframe>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=500 height=86 src="https://music.163.com/outchain/player?type=2&id=1309853414&height=66"></iframe>
             <div id="landlord">
                 <div class="message" style="opacity:0"></div>
                 <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
@@ -129,9 +129,12 @@
             <script>
                 const svg = document.querySelector('.line-chart');
                 window.onload = function() {
+                    var i = 0;
                     var date = new Date();
-                    var request = new XMLHttpRequest();
-                    var data = [0, 0, 0, 0, 0, 0, 0, 0, 0, document.getElementById("busuanzi_value_site_pv").innerHTML]
+                    var data = [Math.floor(Math.random() * 100), 0, 0, 0, 0, 0, 0, 0, 0, document.getElementById("busuanzi_value_site_pv").innerHTML];
+                    for (i = 1; i < 0; i++) {
+                        data[i] = data[i - 1] + Math.floor(Math.random() * 20);
+                    }
                     var config = {
                         title: 'PlanC 💕 Unii',
                         xLabel: '📅 Date',
@@ -156,8 +159,8 @@
         </div>
 
         <script type="text/javascript">
-            var message_Path = '/Live2D/live2d/'
-            var home_Path = 'https://iplanc.github.io/'
+            var message_Path = '/Live2D/live2d/';
+            var home_Path = 'https://iplanc.github.io/';
         </script>
         <script type="text/javascript" src="/Live2D/live2d/js/live2d.js"></script>
         <script type="text/javascript" src="/Live2D/live2d/js/message.js"></script>
