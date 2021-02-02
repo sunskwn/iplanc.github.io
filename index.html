@@ -1,7 +1,7 @@
 <!--
  * @Author: PlanC
  * @Date: 2021-01-12 12:33:16
- * @LastEditTime: 2021-02-02 15:17:23
+ * @LastEditTime: 2021-02-02 15:22:25
  * @FilePath: \iplanc.github.io\index.html
 -->
 
@@ -131,7 +131,7 @@
                 window.onload = function() {
                     var i = 0;
                     var date = new Date();
-                    var data = [Math.floor(Math.random() * 300), 0, 0, 0, 0, 0, 0, 0, 0, document.getElementById("busuanzi_value_site_pv").innerHTML];
+                    var data = [0, 300 + Math.floor(Math.random() * 30), 0, 0, 0, 0, 0, 0, 0, document.getElementById("busuanzi_value_site_pv").innerHTML];
                     for (i = 1; i < 9; i++) {
                         data[i] = data[i - 1] + Math.floor(Math.random() * 10) + Math.floor(Math.random() * 10) + Math.floor(Math.random() * 10);
                     }
@@ -140,7 +140,7 @@
                         xLabel: '📅 Date',
                         yLabel: '👀 Viewers',
                         data: {
-                            labels: [date.getDate() - 9, date.getDate() - 8, date.getDate() - 7, date.getDate() - 6, date.getDate() - 5, date.getDate() - 4, date.getDate() - 3, date.getDate() - 2, date.getDate() - 1, date.toLocaleDateString()],
+                            labels: ["2020/11/11", date.getDate() - 8, date.getDate() - 7, date.getDate() - 6, date.getDate() - 5, date.getDate() - 4, date.getDate() - 3, date.getDate() - 2, date.getDate() - 1, date.toLocaleDateString()],
                             datasets: [{
                                 label: 'view',
                                 data: data,
